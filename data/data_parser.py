@@ -3,7 +3,8 @@ import csv
 
 # csv source file name
 dataset_filename = "./kaggle_disease_symptom_prediction/dataset.csv"
-symptoms_list_filename = "./kaggle_disease_symptom_prediction/Symptom-severity.csv"
+# symptoms_list_filename = "./kaggle_disease_symptom_prediction/Symptom-severity.csv"
+# #^this doesn't contain all symptoms^
 new_filename = "./kaggle_disease_symptom_prediction/parsed_dataset.csv"
 
 dataset_fields = []
@@ -37,22 +38,6 @@ with open(dataset_filename, 'r') as csvfile:
 
         dataset_rows.append(row)
 
-
-
-# #this doesn't contain all symptoms
-# # read in symptoms csv file
-# with open(symptoms_list_filename, 'r') as csvfile:
-# 	# creating a csv reader object
-# 	csvreader = csv.reader(csvfile,skipinitialspace=True)
-	
-# 	# extracting field names through first row
-# 	symptom_file_fields = next(csvreader)
-
-# 	# extracting each data row one by one
-# 	for row in csvreader:
-# 		symptoms_list.append(row[0])
-
-
 # writing to new csv file 
 with open(new_filename, 'w', newline='') as csvfile: 
     # creating a csv writer object 
@@ -78,16 +63,3 @@ with open(new_filename, 'w', newline='') as csvfile:
             if not found:
                 new_row.append(0)
         csvwriter.writerow(new_row)
-
-
-
-## printing the field names
-# print('Field names are:' + ', '.join(field for field in fields))
-
-# # printing first 5 rows
-# print('\nFirst 5 rows are:\n')
-# for row in rows[:5]:
-# 	# parsing each column of a row
-# 	for col in row:
-# 		print("%10s"%col,end=" "),
-# 	print('\n')
