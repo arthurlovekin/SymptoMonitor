@@ -21,19 +21,22 @@ with open(dataset_filename, 'r') as csvfile:
 
     # extracting each data row one by one
     for row in csvreader:
-        #TODO: Remove all whitespace from each symptom of the row:
-
-        dataset_rows.append(row)
-
         # add symptoms to symptoms list
         for i in range(1,len(row)):
+            #Remove all whitespace from each symptom of the row:
+            row[i] = row[i].replace(" ", "_")
+
             already_in_list = False
             for symptom in symptoms_list:
                 if symptom == row[i]:
                     already_in_list = True
                     break
             if not already_in_list:
-                symptoms_list.append(row[i])
+                if row[i] != "":
+                    symptoms_list.append(row[i])
+
+        dataset_rows.append(row)
+
 
 
 # #this doesn't contain all symptoms
@@ -62,7 +65,7 @@ with open(new_filename, 'w', newline='') as csvfile:
         
     # writing the data rows 
     for row in dataset_rows:
-        new_row = [row[0]]
+        new_row = [row[0].replace(" ", "_")]
         for symptom in symptoms_list:
             if symptom == "label":
                 continue
