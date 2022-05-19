@@ -1,5 +1,16 @@
-selected_symptom_list = [];
-selected_symptom_count = 0;
+selected_symptom_list = window.localStorage.getItem('selected_symptom_list');
+if (selected_symptom_list == "")
+	selected_symptom_list = [];
+else
+	selected_symptom_list = selected_symptom_list.split(',');
+
+selected_symptom_count = parseInt(window.localStorage.getItem('selected_symptom_count'));
+
+symptoms = window.localStorage.getItem('symptoms').split(',');
+symptoms.sort();
+
+quick_list = window.localStorage.getItem('quick_list').split(',');
+
 
 var selected_symptom_1 = document.getElementsByClassName('selected_symptom_1');
 var selected_symptom_2 = document.getElementsByClassName('selected_symptom_2');
@@ -13,8 +24,6 @@ var submit_active = document.getElementsByClassName('submit_active');
 
 var selected = document.getElementsByClassName('selected');
 var suggested_symptoms_tag = document.getElementsByClassName('suggested_symptoms_tag');
-
-quick_list = ["skin rash", "chills", "stomach pain", "anxiety"];
 
 var suggested_symptom_1 = document.getElementsByClassName('suggested_symptom_1');
 var suggested_symptom_2 = document.getElementsByClassName('suggested_symptom_2');
@@ -366,7 +375,7 @@ function display_sym() {
 			val.style.display = 'none';
 		}
 		// Reset list
-		quick_list = ["skin rash", "chills", "stomach pain", "anxiety"];		
+		quick_list = ["skin rash", "chills", "stomach pain", "anxiety"];
 	}
 			
 }
@@ -486,7 +495,17 @@ function add_sym4() {
 	display_sym();
 }
 
+function open_login() {
+	window.location.href = '../html/Login.html';
+}
 
-var symptoms = ["itching","skin rash","nodal skin eruptions","continuous sneezing","shivering","chills","joint pain","stomach pain","acidity","ulcers on tongue","muscle wasting","vomiting","burning micturition","spotting  urination","fatigue","weight gain","anxiety","cold hands and feets","mood swings","weight loss","restlessness","lethargy","patches in throat","irregular sugar level","cough","high fever","sunken eyes","breathlessness","sweating","dehydration","indigestion","headache","yellowish skin","dark urine","nausea","loss of appetite","pain behind the eyes","back pain","constipation","abdominal pain","diarrhoea","mild fever","yellow urine","yellowing of eyes","acute liver failure","fluid overload","swelling of stomach","swelled lymph nodes","malaise","blurred and distorted vision","phlegm","throat irritation","redness of eyes","sinus pressure","runny nose","congestion","chest pain","weakness in limbs","fast heart rate","pain during bowel movements","pain in anal region","bloody stool","irritation in anus","neck pain","dizziness","cramps","bruising","obesity","swollen legs","swollen blood vessels","puffy face and eyes","enlarged thyroid","brittle nails","swollen extremeties","excessive hunger","extra marital contacts","drying and tingling lips","slurred speech","knee pain","hip joint pain","muscle weakness","stiff neck","swelling joints","movement stiffness","spinning movements","loss of balance","unsteadiness","weakness of one body side","loss of smell","bladder discomfort","foul smell of urine","continuous feel of urine","passage of gases","internal itching","toxic look (typhos)","depression","irritability","muscle pain","altered sensorium","red spots over body","belly pain","abnormal menstruation","dischromic  patches","watering from eyes","increased appetite","polyuria","family history","mucoid sputum","rusty sputum","lack of concentration","visual disturbances","receiving blood transfusion","receiving unsterile injections","coma","stomach bleeding","distention of abdomen","history of alcohol consumption","fluid overload","blood in sputum","prominent veins on calf","palpitations","painful walking","pus filled pimples","blackheads","scurring","skin peeling","silver like dusting","small dents in nails","inflammatory nails","blister","red sore around nose","yellow crust ooze","prognosis"];
-symptoms.sort();
+function open_results_all() {
+	window.localStorage.setItem('selected_symptom_list', selected_symptom_list);
+	window.localStorage.setItem('selected_symptom_count', selected_symptom_count);
+	window.localStorage.setItem('quick_list', quick_list);
+	window.localStorage.setItem('symptoms', symptoms);
+	window.location.href = '../html/Results_All.html';
+}
+
+display_sym();
 autocomplete(document.getElementById("symptom"), symptoms);
