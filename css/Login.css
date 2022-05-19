@@ -1,0 +1,127 @@
+body {
+  background-color: #FED47A;
+}
+
+main_heading {
+	font-size:4vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	left: 40vw;
+}
+
+existing_user {
+	font-size:3vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 9vw;
+	left: 25vw;
+}
+
+.username_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 16vw;
+	right: 57vw;
+}
+
+.pass_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 20vw;
+	right: 57vw;
+}
+
+.username_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 16vw;
+	left: 44vw;
+}
+
+.pass_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 20vw;
+	left: 44vw;
+}
+
+.login_inactive {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2.5vw;	
+	position: absolute;
+	top: 25vw;
+	left: 66vw;
+	display: block;
+}
+
+.login_active {
+	background-color: #4CAF50;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2.5vw;	
+	position: absolute;
+	top: 25vw;
+	left: 66vw;
+	display: none;
+}
+.login_active:hover {
+	transform: scale(1.2);
+}
+
+new_user {
+	font-size:3vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 35vw;
+	left: 29vw;
+}
+
+.register {
+	background-color: #0A83A7;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2.5vw;	
+	position: absolute;
+	top: 40vw;
+	left: 42vw;
+	display: block;
+}
+.register:hover {
+	transform: scale(1.2);
+}
+
+.guest {
+	background-color: #746F6E;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2.5vw;	
+	position: absolute;
+	top: 40vw;
+	left: 55vw;
+	display: block;
+}
+.guest:hover {
+	transform: scale(1.2);
+}
