@@ -7,7 +7,7 @@ function open_add_sym() {
 }
 
 selected_symptom_list = window.localStorage.getItem('selected_symptom_list').split(',');
-
+console.log(selected_symptom_list);
 [disease_list, score_list] = classify(selected_symptom_list);
 
 
@@ -67,17 +67,17 @@ function classify (symptoms_list) {
 
 	//Object containing diseases and their corresponding symptoms
 	diseases_covered = {
-		"Fungal_infection": ["itching", "skin_rash", "nodal_skin_eruptions","dischromic__patches"],
-		"Allergy": ["continuous_sneezing","shivering","chills","watering_from_eyes"],
-		"GERD": ["stomach_pain","acidity","ulcers_on_tongue","vomiting","cough","chest_pain"],
-		"Drug_Reaction": ["itching", "skin_rash","stomach_pain","burning_micturition","spotting__urination"],
-		"Bronchial_Asthma": ["cough","high_fever","fatigue", "breathlessness", "mucoid_sputum"],
-		"Chicken_Pox": ["red_spots_over_body","itching", "skin_rash","loss_of_appetite","high_fever", "fatigue"],
-		"Common_Cold": ["continuous_sneezing", "chills", "cough", "chest_pain", "high_fever", "fatigue", "headache", "muscle_pain", "congestion", "loss_of_smell" ,"throat_irritation", "runny_nose", "swelled_lymph_nodes"],
-		"Pneumonia": ["chills", "cough", "chest_pain",,"high_fever","fatigue", "breathlessness","sweating", "malaise", "fast_heart_rate", "rusty_sputum"]
+		"Common Cold": ["continuous sneezing", "chills", "cough", "chest pain", "high fever", "fatigue", "headache", "muscle pain", "congestion", "loss of smell" ,"throat irritation", "runny nose", "swelled lymph nodes"],
+		"Pneumonia": ["chills", "cough", "chest pain","high fever","fatigue", "breathlessness","sweating", "malaise", "fast heart rate", "rusty sputum"],
+		"Fungal infection": ["itching", "skin rash", "nodal skin eruptions","dischromic  patches"],
+		"Allergy": ["continuous sneezing","shivering","chills","watering from eyes"],
+		"GERD": ["stomach pain","acidity","ulcers_on_tongue","vomiting","cough","chest pain"],
+		"Drug Reaction": ["itching", "skin_rash","stomach pain","burning micturition","spotting urination"],
+		"Bronchial Asthma": ["cough","high fever","fatigue", "breathlessness", "mucoid sputum"],
+		"Chicken Pox": ["red spots over body","itching", "skin rash","loss of appetite","high fever", "fatigue"]
 	}
 
-    let disease_array = ["Fungal_infection", "Allergy", "GERD", "Drug_Reaction", "Bronchial_Asthma", "Chicken_Pox", "Common_Cold", "Pneumonia"];
+    let disease_array = ["Common Cold", "Pneumonia", "Fungal infection", "Allergy", "GERD", "Chicken Pox", "Drug Reaction", "Bronchial Asthma"];
     let disease_scores = new Array(8); 
     let disease_percents = new Array(8);
     let final_diseases = [];
@@ -115,11 +115,11 @@ function classify (symptoms_list) {
     }
     if(unknown_disease) {
         final_diseases.push("Unknown");
-        final_percents.push(100);
+        final_percents.push(0);
     }
-
-    // console.log(final_diseases);
-    // console.log(final_percents);
+	
+    console.log(final_diseases);
+    console.log(final_percents);
     return [final_diseases, final_percents];
 }
 
