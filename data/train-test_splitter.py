@@ -1,9 +1,10 @@
 import csv
 import random
 
-input_file = './kaggle_disease_symptom_prediction/parsed_dataset.csv'
-output_file_train = './kaggle_disease_symptom_prediction/parsed_dataset_train.csv'
-output_file_test = './kaggle_disease_symptom_prediction/parsed_dataset_test.csv'
+# make sure you're in the full project folder
+input_file = './data/kaggle_disease_symptom_prediction/parsed_dataset.csv'
+output_file_train = './data/kaggle_disease_symptom_prediction/parsed_dataset_train.csv'
+output_file_test = './data/kaggle_disease_symptom_prediction/parsed_dataset_test.csv'
 
 with open(input_file, 'r') as csvfile, \
     open(output_file_train, 'w', newline='') as csvfile_train, \

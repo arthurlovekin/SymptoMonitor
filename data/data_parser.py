@@ -1,11 +1,11 @@
 import csv
 # Parse the dataset from Kaggle into the correct csv format for JS Model.
 
-# csv source file name
-dataset_filename = "./kaggle_disease_symptom_prediction/dataset.csv"
+# csv source file name (make sure you're in full prpoject folder)
+dataset_filename = "./data/kaggle_disease_symptom_prediction/dataset.csv"
 # symptoms_list_filename = "./kaggle_disease_symptom_prediction/Symptom-severity.csv"
 # #^this doesn't contain all symptoms^
-new_filename = "./kaggle_disease_symptom_prediction/parsed_dataset.csv"
+new_filename = "./data/kaggle_disease_symptom_prediction/parsed_dataset.csv"
 
 dataset_fields = []
 symptom_file_fields = []
@@ -50,7 +50,8 @@ with open(new_filename, 'w', newline='') as csvfile:
         
     # writing the data rows 
     for row in dataset_rows:
-        new_row = [row[0].replace(" ", "_")]
+        disease_label = row[0].strip()
+        new_row = [disease_label.replace(" ", "_")]
         for symptom in symptoms_list:
             if symptom == "label":
                 continue

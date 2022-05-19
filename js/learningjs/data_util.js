@@ -14,7 +14,7 @@ if(typeof require === 'function') {
 }
 
 var util = {
-
+//normalize matrix of real numbers
 normalize: function(data, nfeatures) {
   for(var i=0;i<data.length;i++) {
     var mean=0.0, stderr = 0.0;
@@ -33,7 +33,8 @@ normalize: function(data, nfeatures) {
     }
   }
 },
-
+//load text file (for decision tree). Takes filename and callback function
+// (callback function defined inline when loadTextFile is used)
 loadTextFile: function(fn, cb) {
   var data=[];
   var header = true;
