@@ -15,7 +15,8 @@
 		</div>
 			
 		<button type="button" class="submit_inactive">Submit</button>
-		<button type="button" class="submit_active" onclick="open_results_all()">Submit</button>
+		<!-- TODO: FIX symptoms_list so it actually references the list the user inputted -->
+		<button type="button" class="submit_active" onclick="DEMOCLASSIFY.classify(symptoms_list)">Submit</button>
 
 		<form autocomplete="off" action="/action_page.php">
 		  <div class="autocomplete">
@@ -39,6 +40,7 @@
 		<button type="button" class="suggested_symptom_3" onclick="add_sym3()" >Temp3</button>
 		<button type="button" class="suggested_symptom_4" onclick="add_sym4()" >Temp4</button>
 
-		<script src="../js/Add_Symptom.js"></script>	
+		<script src="../js/Add_Symptom.js"></script>
+		<script src="../js/learningjs/demo_classify.js"></script>	
 	</body>
 </html>
