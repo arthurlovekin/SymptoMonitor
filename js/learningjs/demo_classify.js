@@ -66,3 +66,7 @@ DEMOCLASSIFY.classify = function(symptoms_list) {
 //test
 // DEMOCLASSIFY.classify(["itching", "skin_rash", "nodal_skin_eruptions","dischromic__patches"]);
 // DEMOCLASSIFY.classify(["itching", "nodal_skin_eruptions","dischromic__patches"]);
+
+//"itching", "skin_rash", "nodal_skin_eruptions","dischromic__patches"
+//"altered sensorium"
+//"continuous_sneezing", "chills", "cough", "chest_pain", "high_fever"
