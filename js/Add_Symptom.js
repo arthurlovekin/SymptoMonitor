@@ -1,3 +1,12 @@
+// -----------------------------------------------
+// From Python
+quick_list = ['breathlessness', 'stomach pain', 'vomiting', 'mucoid sputum', 'fatigue', 'ulcers on tongue'];
+top_diseases = ['Fungal infection', 'GERD', 'Bronchial Asthma'];
+max_symptom = 'itching';
+
+// -----------------------------------------------
+
+
 selected_symptom_list = window.localStorage.getItem('selected_symptom_list');
 if (selected_symptom_list == "")
 	selected_symptom_list = [];
@@ -8,9 +17,6 @@ selected_symptom_count = parseInt(window.localStorage.getItem('selected_symptom_
 
 symptoms = window.localStorage.getItem('symptoms').split(',');
 symptoms.sort();
-
-quick_list = window.localStorage.getItem('quick_list').split(',');
-
 
 var selected_symptom_1 = document.getElementsByClassName('selected_symptom_1');
 var selected_symptom_2 = document.getElementsByClassName('selected_symptom_2');
@@ -29,6 +35,11 @@ var suggested_symptom_1 = document.getElementsByClassName('suggested_symptom_1')
 var suggested_symptom_2 = document.getElementsByClassName('suggested_symptom_2');
 var suggested_symptom_3 = document.getElementsByClassName('suggested_symptom_3');
 var suggested_symptom_4 = document.getElementsByClassName('suggested_symptom_4');
+
+var predicted_disease_tag = document.getElementsByClassName('predicted_disease_tag');
+var predicted_disease = document.getElementsByClassName('predicted_disease');
+var best_symptom_tag = document.getElementsByClassName('best_symptom_tag');
+var best_symptom = document.getElementsByClassName('best_symptom');
 
 
 function autocomplete(inp, arr) {	
@@ -345,6 +356,20 @@ function display_sym() {
 		}				
 		for (val of suggested_symptoms_tag) {
 			val.style.display = 'block';
+		}
+		for (val of predicted_disease_tag) {
+			val.style.display = 'block';
+		}
+		for (val of predicted_disease) {
+			val.style.display = 'block';
+			val.textContent = top_diseases[0];
+		}
+		for (val of best_symptom_tag) {
+			val.style.display = 'block';
+		}
+		for (val of best_symptom) {
+			val.style.display = 'block';
+			val.textContent = max_symptom;
 		}				
 		display_suggestions();
 	}
@@ -357,10 +382,22 @@ function display_sym() {
 		}				
 		for (val of selected) {
 			val.style.display = 'none';
-		}				
+		}
 		for (val of suggested_symptoms_tag) {
 			val.style.display = 'none';
 		}
+		for (val of predicted_disease_tag) {
+			val.style.display = 'none';
+		}
+		for (val of predicted_disease) {
+			val.style.display = 'none';
+		}
+		for (val of best_symptom_tag) {
+			val.style.display = 'none';
+		}
+		for (val of best_symptom) {
+			val.style.display = 'none';
+		}		
 		// Clear all Suggestions
 		for (val of suggested_symptom_1) {
 			val.style.display = 'none';

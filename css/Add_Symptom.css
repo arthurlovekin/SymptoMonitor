@@ -32,10 +32,10 @@ main_heading {
 }
 
 .body {
-	max-width: 15%;
+	max-width: 13%;
 	height: auto;
 	position: absolute;
-	top: 15vw;
+	top: 10vw;
 	left: 1vw;
 }
 
@@ -328,4 +328,42 @@ main_heading {
 .suggested_symptom_4:hover {
 	transform: scale(1.2);
 	background-color: #4CAF50;
+}
+
+.predicted_disease_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-weight: bold;
+	position: absolute;
+	top: 41vw;
+	right: 68vw;
+	display: block;
+}
+
+.predicted_disease {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 41vw;
+	left: 33vw;
+	display: block;
+}
+
+.best_symptom_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-weight: bold;
+	position: absolute;
+	top: 45vw;
+	right: 68vw;
+	display: block;
+}
+
+.best_symptom {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 45vw;
+	left: 33vw;
+	display: block;
 }

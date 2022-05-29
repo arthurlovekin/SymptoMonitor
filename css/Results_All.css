@@ -141,3 +141,27 @@ main_heading {
 .back:hover {
 	transform: scale(1.2);
 }
+
+.sentence {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 26vw;
+	left: 18vw;
+}
+
+.symptom_pc {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 26vw;
+	left: 14vw;
+}
+
+.symptom_name {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 30vw;
+	left: 14vw;
+}

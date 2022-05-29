@@ -1,3 +1,14 @@
+// -------------------------------------
+// From Python
+
+top_diseases = ['Fungal infection', 'GERD', 'Bronchial Asthma'];
+top_scores = [79, 11, 10];
+max_symptom = 'itching';
+max_dist = 91;
+
+// -------------------------------------
+
+
 function open_login() {
 	window.location.href = '../html/Login.html';
 }
@@ -6,11 +17,12 @@ function open_add_sym() {
 	window.location.href = '../html/Add_Symptom.html';
 }
 
+function open_results_one() {
+	window.location.href = '../html/Results_One.html';
+}
+
 selected_symptom_list = window.localStorage.getItem('selected_symptom_list').split(',');
 console.log(selected_symptom_list);
-[disease_list, score_list] = classify(selected_symptom_list);
-
-
 
 var disease_1 = document.getElementsByClassName('disease_1');
 var disease_2 = document.getElementsByClassName('disease_2');
@@ -19,47 +31,58 @@ var score_1 = document.getElementsByClassName('score_1');
 var score_2 = document.getElementsByClassName('score_2');
 var score_3 = document.getElementsByClassName('score_3');
 
-//var disease_list = ["COVID-19", "Common Cold", "Flu"];
+var symptom_name = document.getElementsByClassName('symptom_name');
+var symptom_pc = document.getElementsByClassName('symptom_pc');
 
 for (val of disease_1) {
-	val.textContent = disease_list[0];
+	val.textContent = top_diseases[0];
 }
-
 for (val of disease_2) {
-	val.textContent = disease_list[1];
+	val.textContent = top_diseases[1];
 }
-
 for (val of disease_3) {
-	val.textContent = disease_list[2];
+	val.textContent = top_diseases[2];
 }
 
-//var score_list = ["80", "55", "20"];
 var color_list = ["rgb(255,0,0)", "rgb(255,0,0)", "rgb(255,0,0)"];
-
-for (i = 0; i < score_list.length; i++) {
-	val = (100-score_list[i])*255/100;
+for (i = 0; i < top_scores.length; i++) {
+	val = (100-top_scores[i])*255/100;
 	color_list[i] = "rgb(255," + val + ",0)";
 }
-
 for (val of score_1) {
-	val.textContent = score_list[0];
+	val.textContent = top_scores[0];
 	val.style.background = color_list[0];
 }
-
 for (val of score_2) {
-	val.textContent = score_list[1];	
+	val.textContent = top_scores[1];	
 	val.style.background = color_list[1];
 }
-
 for (val of score_3) {
-	val.textContent = score_list[2];
+	val.textContent = top_scores[2];
 	val.style.background = color_list[2];
 }
 
+for (val of symptom_name) {
+	val.textContent = max_symptom;
+}
+for (val of symptom_pc) {
+	val.textContent = max_dist;
+}
 
 
+
+
+
+
+
+
+
+
+
+/*
 //Given a list of symptoms, use a rough counting algorithm to determine the most likely disease
 
+[top_diseases, top_scores] = classify(selected_symptom_list);
 
 // Returns a list of diseases and a list that contains, for each disease, the percent of symptoms that are matched in the dataset 
 function classify (symptoms_list) {
@@ -126,3 +149,5 @@ function classify (symptoms_list) {
 //test
 // DEMOCLASSIFY.classify(["itching", "skin_rash", "nodal_skin_eruptions","dischromic__patches"]);
 // DEMOCLASSIFY.classify(["itching", "nodal_skin_eruptions","dischromic__patches"]);
+
+*/
