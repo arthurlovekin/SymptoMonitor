@@ -1,4 +1,3 @@
-from pyexpat import model
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics 
