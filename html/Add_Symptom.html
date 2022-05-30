@@ -13,7 +13,7 @@
 		<div class="selected">
 			<span>Selected:</span>
 		</div>
-			
+		
 		<button type="button" class="submit_inactive">Submit</button>
 		<!-- TODO: FIX symptoms_list so it actually references the list the user inputted -->
 		<button type="button" class="submit_active" onclick="open_results_all()">Submit</button>
@@ -39,7 +39,23 @@
 		<button type="button" class="suggested_symptom_2" onclick="add_sym2()" >Temp2</button>
 		<button type="button" class="suggested_symptom_3" onclick="add_sym3()" >Temp3</button>
 		<button type="button" class="suggested_symptom_4" onclick="add_sym4()" >Temp4</button>
+		
+		<div class="predicted_disease_tag">
+			<span>Likely Diagnosis:</span>
+		</div>
 
+		<div class="predicted_disease">
+			<span>Temp</span>
+		</div>
+
+		<div class="best_symptom_tag">
+			<span>Best Matching Symptom:</span>
+		</div>
+
+		<div class="best_symptom">
+			<span>Temp</span>
+		</div>
+		
 		<script src="../js/Add_Symptom.js"></script>
 		<script src="../js/learningjs/demo_classify.js"></script>	
 	</body>
