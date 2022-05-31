@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/Login.css">
+	</head>
+	<body>
+
+	<main_heading>SymptoMonitor</main_heading>
+	<existing_user>Existing User:</existing_user>
+
+	<div>
+		<label class= "username_tag" for="username">Username:</label>
+		<input class= "username_in" type="text" id="username" name="username">
+	</div>
+
+	<div>
+		<label class= "pass_tag" for="pass">Password:</label>
+		<input class= "pass_in" type="password" id="pass" name="password"
+			   minlength="8" required>
+	</div>
+
+	<button type="button" class="login_inactive">Login</button>
+	<button type="button" class="login_active" onclick="open_add_sym()">Login</button>
+
+	<new_user>New User:</new_user>
+	<button type="button" class="register" onclick="open_register()">Register</button>
+	<button type="button" class="guest" onclick="open_add_sym()">Guest Session</button>
+	
+	<script src="../js/Login.js"></script>
+	
+	</body>
+</html>

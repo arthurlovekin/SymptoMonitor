@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./login.css">
+	</head>
+	<body>
+
+	<main_heading>SymptoMonitor</main_heading>
+
+	<form action="/login" method="post">
+		<!-- user input-->
+		Username:<br>
+		<input type="text" name="username" placeholder="Username" required><br><br>
+		Password:<br>
+		<input type="password" name="password" placeholder="Password" required><br><br>
+		<!-- submit button -->
+		<input type="submit" value="login">
+	</form>
+
+	<new_user>New User:</new_user>
+	<button type="button" class="register" onclick="open_register()">Register</button>
+	<button type="button" class="guest" onclick="open_add_sym()">Guest Session</button>
+	
+	<!-- <script src="../js/Login.js"></script> -->
+	
+	</body>
+</html>

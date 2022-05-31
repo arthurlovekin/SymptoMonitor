@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Results_One</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/Results_One.css">
+	</head>
+	<body>
+
+		<script src="https://www.gstatic.com/charts/loader.js"> </script>
+		
+		<img class="account" src="../Icons/account.png" alt="Account Icon">
+		<img class="signout" src="../Icons/signout.png" alt="Sign Out Icon" onclick="open_login()">
+		<button type="button" class="back" onclick="open_results_all()">Back</button>		
+		<span class="disease_name_class">Disease</span>
+		<span class="disease_dsc_class">Description</span>
+		
+		<span class="precautions_tag">Suggestions: </span>
+		<span class="precautions">Temp</span>
+
+		<div id="symptom_chart_1"></div>
+		<div id="symptom_chart_2"></div>
+
+		<span class="chart1_desc">Users with similar symptoms</span>
+		<span class="chart2_desc">Prediction Model Importance</span>
+		
+		<script src="../js/Results_One.js"></script>
+			
+	</body>
+</html>

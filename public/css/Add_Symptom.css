@@ -1,0 +1,369 @@
+body {
+  background-color: #FED47A;
+}
+
+main_heading {
+	font-size:4vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	left: 25vw;
+}
+
+.account {
+	max-width: 6%;
+	height: auto;
+	position: absolute;
+	top: 1vw;
+	left: 2vw;
+}
+.account:hover {
+	transform: scale(1.2);
+}
+
+.signout {
+	max-width: 6%;
+	height: auto;
+	position: absolute;
+	top: 1vw;
+	left: 92vw;
+}
+.signout:hover {
+	transform: scale(1.2);
+}
+
+.body {
+	max-width: 13%;
+	height: auto;
+	position: absolute;
+	top: 10vw;
+	left: 1vw;
+}
+
+.selected {
+	font-size:3vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 11vw;
+	right: 2vw;
+	display: none;
+}
+
+.suggested_symptoms_tag {
+	font-size:3vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 11vw;
+	left: 52vw;
+	display: none;
+}
+
+.submit_inactive {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 3vw;	
+	position: absolute;
+	top: 43vw;
+	left: 85vw;
+	display: block;
+}
+
+.submit_active {
+	background-color: #4CAF50;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 3vw;	
+	position: absolute;
+	top: 43vw;
+	left: 85vw;
+	display: none;
+}
+.submit_active:hover {
+	transform: scale(1.2);
+}
+
+.autocomplete {
+	position: absolute;
+	top: 10vw;
+	left: 18vw;	
+}
+
+.searchedSymptom {
+  border: 0.5vw solid #000000;
+  background-color: #f1f1f1;
+  padding: 1vw;
+  font-size: 3vw;
+}
+.searchedSymptom[type=text] {
+  background-color: #f1f1f1;
+  width: 70%;
+}
+.searchedSymptom[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  font-size: 2vw;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 8.7vw;
+}
+.autocomplete-items div {
+  padding: 0.5vw;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+
+
+.selected_symptom_1 {
+	background-color: #25B0E5;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 17vw;
+	right: 2vw;
+	display: none;
+}
+.selected_symptom_1:hover {
+	transform: scale(1.2);
+	background-color: #E55125;
+}
+
+.selected_symptom_2 {
+	background-color: #25B0E5;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 21vw;
+	right: 2vw;
+	display: none;
+}
+.selected_symptom_2:hover {
+	transform: scale(1.2);
+	background-color: #E55125;
+}
+
+.selected_symptom_3 {
+	background-color: #25B0E5;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 25vw;
+	right: 2vw;
+	display: none;
+}
+.selected_symptom_3:hover {
+	transform: scale(1.2);
+	background-color: #E55125;
+}
+
+.selected_symptom_4 {
+	background-color: #25B0E5;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 29vw;
+	right: 2vw;
+	display: none;
+}
+.selected_symptom_4:hover {
+	transform: scale(1.2);
+	background-color: #E55125;
+}
+
+.selected_symptom_5 {
+	background-color: #25B0E5;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 33vw;
+	right: 2vw;
+	display: none;
+}
+.selected_symptom_5:hover {
+	transform: scale(1.2);
+	background-color: #E55125;
+}
+
+.selected_symptom_6 {
+	background-color: #25B0E5;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 37vw;
+	right: 2vw;
+	display: none;
+}
+.selected_symptom_6:hover {
+	transform: scale(1.2);
+	background-color: #E55125;
+}
+
+.suggested_symptom_1 {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 17vw;
+	left: 52vw;
+	display: none;
+}
+.suggested_symptom_1:hover {
+	transform: scale(1.2);
+	background-color: #4CAF50;
+}
+
+.suggested_symptom_2 {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 21vw;
+	left: 52vw;
+	display: none;
+}
+.suggested_symptom_2:hover {
+	transform: scale(1.2);
+	background-color: #4CAF50;
+}
+
+.suggested_symptom_3 {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 25vw;
+	left: 52vw;
+	display: none;
+}
+.suggested_symptom_3:hover {
+	transform: scale(1.2);
+	background-color: #4CAF50;
+}
+
+.suggested_symptom_4 {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.3vw 0.3vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2vw;	
+	position: absolute;
+	top: 29vw;
+	left: 52vw;
+	display: none;
+}
+.suggested_symptom_4:hover {
+	transform: scale(1.2);
+	background-color: #4CAF50;
+}
+
+.predicted_disease_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-weight: bold;
+	position: absolute;
+	top: 41vw;
+	right: 68vw;
+	display: block;
+}
+
+.predicted_disease {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 41vw;
+	left: 33vw;
+	display: block;
+}
+
+.best_symptom_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-weight: bold;
+	position: absolute;
+	top: 45vw;
+	right: 68vw;
+	display: block;
+}
+
+.best_symptom {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 45vw;
+	left: 33vw;
+	display: block;
+}
