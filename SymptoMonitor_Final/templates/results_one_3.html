@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Results_One</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/results_one.css')}}">
+	</head>
+	<body>
+
+		<script src="https://www.gstatic.com/charts/loader.js"> </script>
+		
+		<a href=login> <img class="signout" src="{{url_for('static', filename='icons/signout.png')}}" alt="Sign Out Icon"> </a>
+		<a href=results_all> <button type="button" class="back">Back</button> </a>
+		<span class="disease_name_class">Disease</span>
+		<span class="disease_dsc_class">Description</span>
+		
+		<span class="precautions_tag">Suggestions: </span>
+		<span class="precautions">Temp</span>
+
+		<div id="symptom_chart_1"></div>
+		<div id="symptom_chart_2"></div>
+
+		<span class="chart1_desc">Users with similar symptoms</span>
+		<span class="chart2_desc">Prediction Model Importance</span>
+		
+		<script src="{{url_for('static', filename='js/results_one.js')}}"></script>
+		
+		<script>
+			// Which disease is selected
+			index = 2;
+
+			// -----------------------
+			// From Python
+			top_diseases = {{ top_diseases | tojson }};
+			var disease_name = top_diseases[index];
+			
+			description_dict = {{ description_dict | tojson }};
+			var disease_dsc = description_dict[disease_name];
+			
+			precaution_dict = {{ precaution_dict | tojson }};
+			var prec_1 = precaution_dict[disease_name][0];
+			var prec_2 = precaution_dict[disease_name][1];
+			var prec_3 = precaution_dict[disease_name][2];
+			var prec_4 = precaution_dict[disease_name][3];
+			
+			selected_symptom_list = {{ selected_symptom_list | tojson }};
+			symptom_pc_dict = {{ symptom_pc_dict | tojson }};
+			var symptom_pc = symptom_pc_dict[disease_name];
+			
+			symptoms_per_disease = {{ symptoms_per_disease | tojson }};
+			importance = {{ importance | tojson }};
+
+			// -----------------------
+
+			var disease_name_class = document.getElementsByClassName('disease_name_class');
+			for (val of disease_name_class) {
+				val.textContent = disease_name;
+			}
+
+			var disease_dsc_class = document.getElementsByClassName('disease_dsc_class');
+			for (val of disease_dsc_class) {
+				val.textContent = disease_dsc;
+			}
+
+			var precautions = document.getElementsByClassName('precautions');
+			for (val of precautions) {
+				val.textContent = prec_1 + ', ' + prec_2 + ', ' + prec_3 + ', ' + prec_4;
+			}
+
+			function drawChart1() {
+
+				var data = new google.visualization.DataTable();
+				data.addColumn('string', 'Symptom');
+				data.addColumn('number', 'Distribution');
+				data.addColumn({ type: 'string', role: 'style' });
+				
+				var num_sym = selected_symptom_list.length
+				data.addRows(num_sym);
+				for (let i=0; i<num_sym; i++) {
+					data.setCell(i, 0, selected_symptom_list[i]);
+					data.setCell(i, 1, symptom_pc[i]);
+				}
+
+				var view = new google.visualization.DataView(data);
+				view.setColumns([0, 1]);
+
+				var formatter = new google.visualization.NumberFormat({suffix: '%'});
+				formatter.format(data, 1);
+			  
+				var options = {
+				  chartArea: {'left': 100, 'top': 5, 'bottom':20, 'right': 0, 'width': '100%', 'height': '100%'},
+				  backgroundColor: { fill:'transparent' },
+				  hAxis: { gridlines: {count: 10}}
+				};
+				
+				var chart = new google.visualization.BarChart(document.getElementById('symptom_chart_1'));
+				chart.draw(view, options);
+
+			}
+
+			google.load("visualization", "1", { 
+				packages: ["corechart"], 
+				callback: function() { drawChart1(); }
+			});
+
+
+
+			function drawChart2() {
+
+				var data = new google.visualization.DataTable();
+				data.addColumn('string', 'Symptom');
+				data.addColumn('number', 'Importance');
+				data.addColumn({ type: 'string', role: 'style' });
+				
+				var num_sym = symptoms_per_disease.length
+				data.addRows(num_sym);
+				for (let i=0; i<num_sym; i++) {
+					data.setCell(i, 0, symptoms_per_disease[i]);
+					data.setCell(i, 1, importance[i]);
+				}
+
+				var view = new google.visualization.DataView(data);
+				view.setColumns([0, 1]);
+
+				var formatter = new google.visualization.NumberFormat({suffix: '%'});
+				formatter.format(data, 1);
+			  
+				var options = {
+				  chartArea: {'left': 5, 'top': 5, 'bottom':5, 'right': 5, 'width': '100%', 'height': '100%'},
+				  backgroundColor: { fill:'transparent' },
+				};
+				
+				var chart = new google.visualization.PieChart(document.getElementById('symptom_chart_2'));
+				chart.draw(view, options);
+
+			}
+
+			google.load("visualization", "1", { 
+				packages: ["corechart"], 
+				callback: function() { drawChart2(); }
+			});
+					
+		</script>
+			
+	</body>
+</html>

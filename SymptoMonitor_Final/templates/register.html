@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+	</head>
+	<body>
+
+	<main_heading>Registration</main_heading>
+	<cred>Credentials:</cred>
+	<demo>Demographics:</demo>
+
+	<button type="button" class="register_inactive">Register</button>
+	<a href=add_symptom> <button type="button" class="register_active">Register</button> </a>
+
+	<div>
+		<label class= "username_tag" for="username">Username:</label>
+		<input class= "username_in" type="text" id="username" name="username" size=15>
+	</div>
+
+	<div>
+		<label class= "pass_tag" for="pass">Password:</label>
+		<input class= "pass_in" type="password" id="pass" size=15 name="password"
+			   minlength="8" required>
+	</div>
+
+	<div>
+		<label class= "repass_tag" for="repass">Re-Enter Password:</label>
+		<input class= "repass_in" type="password" id="repass" size=15 name="repassword"
+			   minlength="8" required>
+	</div>
+
+	<div>
+		<label class= "age_tag" for="age">Age:</label>
+		<input class= "age_in" type="text" id="age" name="age" size=3>
+	</div>
+
+	<div>
+		<label class= "height_tag" for="height">Height (in cm):</label>
+		<input class= "height_in" type="text" id="height" name="height" size=3>
+	</div>
+
+	<div>
+		<label class= "weight_tag" for="weight">Weight (in lbs):</label>
+		<input class= "weight_in" type="text" id="weight" name="weight" size=3>
+	</div>
+
+	<div>
+		<label class= "race_tag" for="race">Race:</label>
+		<input class= "race_in" type="text" id="race" name="race" size=10>
+	</div>
+	
+	<div>
+		<label class= "gender_tag">Gender:</label>
+		<button type="button" class="gender_in1_unselected" onclick="select_gender_1()">Male</button>
+		<button type="button" class="gender_in2_unselected" onclick="select_gender_2()">Female</button>
+		<button type="button" class="gender_in3_unselected" onclick="select_gender_3()">Other</button>
+		<button type="button" class="gender_in1_selected" onclick="deselect_gender()">Male</button>
+		<button type="button" class="gender_in2_selected" onclick="deselect_gender()">Female</button>
+		<button type="button" class="gender_in3_selected" onclick="deselect_gender()">Other</button>
+	</div>
+
+	<div>
+		<label class= "smoke_tag">Do You Smoke?:</label>
+		<button type="button" class="smoke_in1_unselected" onclick="select_smoke_1()">Yes</button>
+		<button type="button" class="smoke_in2_unselected" onclick="select_smoke_2()">No</button>
+		<button type="button" class="smoke_in1_selected" onclick="deselect_smoke()">Yes</button>
+		<button type="button" class="smoke_in2_selected" onclick="deselect_smoke()">No</button>
+	</div>
+
+	<div>
+		<label class= "drink_tag">Do You Drink?:</label>
+		<button type="button" class="drink_in1_unselected" onclick="select_drink_1()">Yes</button>
+		<button type="button" class="drink_in2_unselected" onclick="select_drink_2()">No</button>
+		<button type="button" class="drink_in1_selected" onclick="deselect_drink()">Yes</button>
+		<button type="button" class="drink_in2_selected" onclick="deselect_drink()">No</button>
+	</div>
+
+	<div>
+		<label class= "sex_tag">Are You Sexually Active?:</label>
+		<button type="button" class="sex_in1_unselected" onclick="select_sex_1()">Yes</button>
+		<button type="button" class="sex_in2_unselected" onclick="select_sex_2()">No</button>
+		<button type="button" class="sex_in1_selected" onclick="deselect_sex()">Yes</button>
+		<button type="button" class="sex_in2_selected" onclick="deselect_sex()">No</button>
+	</div>
+		
+	<script src="{{url_for('static', filename='js/register.js')}}"></script>
+	
+	</body>
+</html>

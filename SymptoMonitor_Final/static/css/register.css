@@ -1,0 +1,543 @@
+body {
+  background-color: #FED47A;
+}
+
+main_heading {
+	font-size:4vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	left: 42vw;
+}
+
+cred {
+	font-size:3vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-weight: bold;
+	position: absolute;
+	top: 5vw;
+	left: 2vw;
+}
+
+demo {
+	font-size:3vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-weight: bold;
+	position: absolute;
+	top: 20vw;
+	left: 2vw;
+}
+
+.signout {
+	max-width: 6%;
+	height: auto;
+	position: absolute;
+	top: 1vw;
+	left: 92vw;
+}
+.signout:hover {
+	transform: scale(1.2);
+}
+
+.username_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 11vw;
+	left: 8vw;
+}
+
+.username_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 11vw;
+	left: 21vw;
+}
+
+.pass_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 11vw;
+	right: 30vw;
+}
+
+.pass_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 11vw;
+	right: 5vw;
+}
+
+.repass_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 15vw;
+	right: 30vw;
+}
+
+.repass_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 15vw;
+	right: 5vw;
+}
+
+.age_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 25vw;
+	right: 80vw;
+}
+
+.age_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 25vw;
+	right: 69vw;
+}
+
+.height_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 29vw;
+	right: 80vw;
+}
+
+.height_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 29vw;
+	right: 69vw;
+}
+
+.weight_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 33vw;
+	right: 80vw;
+}
+
+.weight_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 33vw;
+	right: 69vw;
+}
+
+.race_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 37vw;
+	right: 80vw;
+}
+
+.race_in {
+	font-size:2vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 37vw;
+	right: 60.8vw;
+}
+
+.gender_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 41vw;
+	right: 80vw;
+}
+
+.gender_in1_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 41vw;
+	left: 21vw;
+	display: block;
+}
+.gender_in1_unselected:hover {
+	transform: scale(1.2);
+}
+
+.gender_in1_selected {
+	background-color: #0A83A7;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 41vw;
+	left: 21vw;
+	display: none;
+}
+.gender_in1_selected:hover {
+	transform: scale(1.2);
+}
+
+
+.gender_in2_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 41vw;
+	left: 27vw;
+	display: block;
+}
+.gender_in2_unselected:hover {
+	transform: scale(1.2);
+}
+
+.gender_in2_selected {
+	background-color: #0A83A7;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 41vw;
+	left: 27vw;
+	display: none;
+}
+.gender_in2_selected:hover {
+	transform: scale(1.2);
+}
+
+.gender_in3_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 41vw;
+	left: 35vw;
+	display: block;
+}
+.gender_in3_unselected:hover {
+	transform: scale(1.2);
+}
+
+.gender_in3_selected {
+	background-color: #0A83A7;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 41vw;
+	left: 35vw;
+	display: none;
+}
+.gender_in3_selected:hover {
+	transform: scale(1.2);
+}
+
+.smoke_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 25vw;
+	right: 15vw;
+}
+
+.smoke_in1_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 25vw;
+	left: 86vw;
+	display: block;
+}
+.smoke_in1_unselected:hover {
+	transform: scale(1.2);
+}
+
+.smoke_in1_selected {
+	background-color: #4CAF50;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 25vw;
+	left: 86vw;
+	display: none;
+}
+.smoke_in1_selected:hover {
+	transform: scale(1.2);
+}
+
+.smoke_in2_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 25vw;
+	left: 92vw;
+	display: block;
+}
+.smoke_in2_unselected:hover {
+	transform: scale(1.2);
+}
+
+.smoke_in2_selected {
+	background-color: #E55125;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 25vw;
+	left: 92vw;
+	display: none;
+}
+.smoke_in2_selected:hover {
+	transform: scale(1.2);
+}
+
+
+.drink_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 30vw;
+	right: 15vw;
+}
+
+.drink_in1_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 30vw;
+	left: 86vw;
+	display: block;
+}
+.drink_in1_unselected:hover {
+	transform: scale(1.2);
+}
+
+.drink_in1_selected {
+	background-color: #4CAF50;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 30vw;
+	left: 86vw;
+	display: none;
+}
+.drink_in1_selected:hover {
+	transform: scale(1.2);
+}
+
+.drink_in2_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 30vw;
+	left: 92vw;
+	display: block;
+}
+.drink_in2_unselected:hover {
+	transform: scale(1.2);
+}
+
+.drink_in2_selected {
+	background-color: #E55125;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 30vw;
+	left: 92vw;
+	display: none;
+}
+.drink_in2_selected:hover {
+	transform: scale(1.2);
+}
+
+
+.sex_tag {
+	font-size:2.5vw;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	position: absolute;
+	top: 35vw;
+	right: 15vw;
+}
+
+.sex_in1_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 35vw;
+	left: 86vw;
+	display: block;
+}
+.sex_in1_unselected:hover {
+	transform: scale(1.2);
+}
+
+.sex_in1_selected {
+	background-color: #4CAF50;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 35vw;
+	left: 86vw;
+	display: none;
+}
+.sex_in1_selected:hover {
+	transform: scale(1.2);
+}
+
+.sex_in2_unselected {
+	background-color: #E1DED8;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 35vw;
+	left: 92vw;
+	display: block;
+}
+.sex_in2_unselected:hover {
+	transform: scale(1.2);
+}
+
+.sex_in2_selected {
+	background-color: #E55125;
+	border: 0.2vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 0.5vw 0.5vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 1.5vw;	
+	position: absolute;
+	top: 35vw;
+	left: 92vw;
+	display: none;
+}
+.sex_in2_selected:hover {
+	transform: scale(1.2);
+}
+
+.register_inactive {
+	background-color: #E1DED8;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2.5vw;	
+	position: absolute;
+	top: 43vw;
+	left: 85vw;
+	display: block;
+}
+
+.register_active {
+	background-color: #4CAF50;
+	border: 0.3vw solid #000000;
+	border-radius: 5vw;	
+	color: black;
+	padding: 1vw 1vw;
+	text-align: center;
+	display: inline-block;
+	font-size: 2.5vw;	
+	position: absolute;
+	top: 43vw;
+	left: 85vw;
+	display: none;
+}
+.register_active:hover {
+	transform: scale(1.2);
+}
