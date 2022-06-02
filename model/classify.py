@@ -63,18 +63,20 @@ for i in range(len(top_scores)):
     if top_scores[i] == 0.0:
         n_zero_scores += 1
 
-if(n_zero_scores >= 4):
+if(n_zero_scores >= len(top_diseases)-1):
     condensed_dataset = pd.read_csv(condensed_dataset_path)
     n_matches_list = [0] * condensed_dataset.shape[1]
     for i in range(condensed_dataset.shape[1]):
         n_matches_list[i] = len(set(condensed_dataset.iloc[:,i]).intersection(set(symptoms_list)))
     # print(n_matches_list)
-    top4indexes = sorted(range(len(n_matches_list)), key=lambda i: n_matches_list[i], reverse=True)[:4]
+    top4indexes = sorted(range(len(n_matches_list)), key=lambda i: n_matches_list[i], reverse=True)[:(len(top_diseases)-1)]
+    # top4indexes = sorted(range(len(n_matches_list)), key=lambda i: n_matches_list[i], reverse=True)[:4]
+
     top_alt_diseases = []
     top_alt_scores = []
     for index in top4indexes:
         top_alt_diseases.append(condensed_dataset.iloc[index][0])
-        top_alt_scores.append(n_matches_list[index]/len(symptoms_list)*0.2)
+        top_alt_scores.append(n_matches_list[index]/len(symptoms_list)*1/len(top_diseases))
     for i in range(len(top_alt_diseases)):
         if top_alt_diseases[i] in top_diseases:
             if(i+1 < len(top_diseases)-1):

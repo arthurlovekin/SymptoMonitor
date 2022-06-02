@@ -25,7 +25,7 @@ warnings.filterwarnings("ignore")
 
 test_dataset_path = 'data/kaggle_disease_symptom_prediction/parsed_dataset_test.csv'
 model_path = 'data/kaggle_disease_symptom_prediction/model.joblib'
-
+condensed_dataset_path = 'data/kaggle_disease_symptom_prediction/condensed_dataset.csv'
 # get stored model and test data
 clf = load(model_path)
 dataframe_test = pd.read_csv(test_dataset_path)
@@ -70,6 +70,49 @@ def ml_processing():
     top_idx = top_idx[::-1]
     top_scores = [int(score[0][i]*100) for i in top_idx]
     top_diseases = [clf.classes_[i].replace('_', ' ') for i in top_idx]
+
+    #######
+    # Edit output arrays if the scores are 1.0 and 0.0s
+    # For some datasets the classifier is very confident about one disease
+    # and gives random results for the others (with score zero).
+    # In this case, look for diseaseses with similar symptoms
+    n_zero_scores = 0
+    for i in range(len(top_scores)):
+        if top_scores[i] == 0.0:
+            n_zero_scores += 1
+
+    if(n_zero_scores >= len(top_diseases)-1):
+        condensed_dataset = pd.read_csv(condensed_dataset_path)
+        n_matches_list = [0] * condensed_dataset.shape[1]
+        for i in range(condensed_dataset.shape[1]):
+            # symptoms_row = [condensed_dataset.iloc[:,i][k].replace('_', ' ') for k in range(0,len(condensed_dataset.iloc[:,i]))]
+            # n_matches_list[i] = len(set(symptoms_row).intersection(set(selected_symptom_list)))
+            n_matches_list[i] = len(set(condensed_dataset.iloc[:,i]).intersection(set(selected_symptom_list)))
+        # print(n_matches_list)
+        top4indexes = sorted(range(len(n_matches_list)), key=lambda i: n_matches_list[i], reverse=True)[:(len(top_diseases)-1)]
+        top_alt_diseases = []
+        top_alt_scores = []
+        for index in top4indexes:
+            top_alt_diseases.append(condensed_dataset.iloc[index][0])
+            top_alt_scores.append(n_matches_list[index]/len(selected_symptom_list)*1/len(top_diseases))
+        for i in range(len(top_alt_diseases)):
+            if top_alt_diseases[i] in top_diseases:
+                if(i+1 < len(top_diseases)-1):
+                    top_alt_diseases[i] = top_diseases[i+1]
+                    top_alt_scores[i] = 0 #float(top_scores[i+1])/100.0
+                else:
+                    top_alt_diseases[i] = top_diseases[i]
+                    top_alt_scores[i] = 0 #float(top_scores[i])/100.0
+        # print(top_alt_diseases)
+        # print(top_alt_scores)
+
+        top_diseases[1:] = [top_alt_diseases[i].replace('_', ' ') for i in range(0,len(top_alt_diseases))]
+        top_scores[1:] = int(top_alt_scores*100)
+        top_scores[0] = top_scores[0]-sum(top_alt_scores)
+
+    #####
+
+
 
 
     # Generate quick list based on symptoms added
