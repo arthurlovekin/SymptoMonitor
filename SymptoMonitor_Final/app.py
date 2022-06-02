@@ -182,10 +182,6 @@ def ml_processing():
         symptom_idxs.append(symptom_labels.index(symptom.replace(' ', '_')))
     importance = [importances[symptom_idx] for symptom_idx in symptom_idxs]
 
-    print("Quick List:", quick_list)
-    print("Likely Prediction:", top_diseases[0])
-    print("Best Matching Symptom:", max_symptom)
-
 
 
 
@@ -241,6 +237,7 @@ def add_symptom_data():
         ml_processing()
     symptoms = [symptom.replace('_', ' ') for symptom in symptoms]
     selected_symptom_list = [selected_symptom.replace('_', ' ') for selected_symptom in selected_symptom_list]
+    quick_list = [symptom for symptom in quick_list if symptom not in selected_symptom_list]
     return result
 
 @app.route('/_stuff', methods = ['GET'])
